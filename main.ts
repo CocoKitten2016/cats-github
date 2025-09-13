@@ -1,16 +1,52 @@
 namespace SpriteKind {
     export const cat = SpriteKind.create()
 }
+info.onScore(250, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(210, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(60, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(300, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(30, function () {
+    info.changeLifeBy(1)
+})
 info.onCountdownEnd(function () {
     game.gameOver(true)
+})
+info.onScore(280, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(0, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(90, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(180, function () {
+    info.changeLifeBy(1)
 })
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
     info.changeLifeBy(-1)
     pause(1000)
 })
+info.onScore(240, function () {
+    info.changeLifeBy(1)
+})
+info.onScore(150, function () {
+    info.changeLifeBy(1)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     sprites.destroy(otherSprite)
+})
+info.onScore(120, function () {
+    info.changeLifeBy(1)
 })
 let gyro: Sprite = null
 music.play(music.createSong(hex`0078000408050100001c00010a006400f401640000040000000000000000000000000005000004e10000000400051e2225292c08000c000222250c00100001291000140001291400180002222918001c0001251c00200002272920002400012924002800012928002c0005191e2225272c003000021b2c30003400041e22252934003800011938003c00021e223c00400001224000440001254400480002222548004c00011e4c0050000320252a50005400012258005c0002191e60006400011964006800021d2068006c0001226c007000012574007800061b1e2225292c7c0080000225298400880001228c00900006191e2225292c94009800012798009c0001249c00a000021e22`), music.PlaybackMode.LoopingInBackground)
@@ -115,10 +151,10 @@ myEnemy,
     . . . . f b 3 d d d d 3 b f 
     . . . . e d d d d d d d d e 
     b f b . e d f d d d d f d e 
-    f d f . f d d d d d d d d f 
-    f d f . f 2 d d b b d d b f 
+    f d f . f d d d b b d d d f 
+    f d f . f 2 d d d d d d b f 
     f d f f b b 2 2 2 2 2 2 f . 
-    f b d b b d d d d d d b f . 
+    f b d b b d d d 5 5 d b f . 
     . f f f d d b d d d d d f . 
     . . . f d f f d f f f d f . 
     . . . f f . . f f . . f f . 
@@ -131,10 +167,10 @@ myEnemy,
     . . . . f b 3 d d d d 3 b f 
     . . . . e d d d d d d d d e 
     . b f b e d f d d d d f d e 
-    . f d f f d d d d d d d d f 
-    . f d f b 2 d d b b d d b f 
+    . f d f f d d d b b d d d f 
+    . f d f b 2 d d d d d d b f 
     . f b d b d 2 2 2 2 2 2 f . 
-    . . f f f d d d d d d d f . 
+    . . f f f d d d 5 5 d d f . 
     . . . . f d f f f d b d f . 
     . . . . f f . . f f f f . . 
     `,img`
@@ -146,10 +182,10 @@ myEnemy,
     . . . . f b 3 d d d d 3 b f 
     . . . . e d d d d d d d d e 
     b f b . e d f d d d d f d e 
-    f d f . f d d d d d d d d f 
-    f d f f b 2 d d b b d d b f 
+    f d f . f d d d b b d d d f 
+    f d f f b 2 d d d d d d b f 
     f b d b b d 2 2 2 2 2 2 f . 
-    . f f f f d d d d d d d f . 
+    . f f f f d d d 5 5 d d f . 
     . . . . . f d f d b d f . . 
     . . . . . f f f f f f . . . 
     `],
